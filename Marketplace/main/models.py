@@ -16,3 +16,12 @@ def create_user_profile(sender, instance, created, **kwargs):
 
 from django.db.models.signals import post_save
 post_save.connect(create_user_profile, sender=User)
+
+class Item(models.Model):
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=255)
+    description = models.TextField()
+    image = models.ImageField(upload_to='items/', blank=True, null=True)
+
+    def __str__(self):
+        return self.name

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - CicloSolidário</title>
+    {% load static %}
+      <script src="{% static 'js/category.js' %}" defer></script>
+      <script src="{% static 'js/alert.js' %}" defer></script>
+      <link rel="stylesheet" href="{% static 'css/header.css' %}">
+      <link rel="stylesheet" href="{% static 'css/alerta.css' %}">
+      <link rel="stylesheet" href="{% static 'css/entry.css' %}">
+
+
+{% block title %}Adicionar Produto{% endblock %}
+
+{% block content %}
+    <h1>Adicionar Novo Produto</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Adicionar Produto</button>
+    </form>
+{% endblock %}

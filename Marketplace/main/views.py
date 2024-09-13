@@ -4,10 +4,13 @@ from django.contrib.auth import authenticate, login as auth_login
 from django.contrib.auth import logout as auth_logout
 from django.contrib.auth.models import User
 from django.contrib import messages
-from .models import Profile
+from .models import Profile, Item
+from .forms import ItemForm
+from django.contrib.auth.decorators import login_required
 
 def index(request):
-    return render(request, 'index.html')
+    items = Item.objects.all()
+    return render(request, 'index.html', {'items': items})
 
 def detalhes_produto(request, product_id):
     # Dados fictícios para o produto
@@ -72,3 +75,17 @@ def signup(request):
 def logout(request):
     auth_logout(request)
     return redirect('index')
+
+@login_required
+def add_item(request):
+    if request.method == 'POST':
+        form = ItemForm(request.POST, request.FILES)
+        if form.is_valid():
+            item = form.save(commit=False)
+            item.owner = request.user
+            item.save()
+            messages.success(request, 'Produto adicionado com sucesso!')
+            return redirect('index')  # Redireciona para a página inicial após adicionar o produto
+    else:
+        form = ItemForm()
+    return render(request, 'add_item.html', {'form': form})
