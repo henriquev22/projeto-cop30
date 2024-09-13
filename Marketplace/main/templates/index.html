@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace - E-commerce</title>
+    {% load static %}
+      <script src="{% static 'js/category.js' %}" defer></script>
+      <link rel="stylesheet" href="{% static 'css/header.css' %}">
+      <link rel="stylesheet" href="{% static 'css/styler.css' %}">
+
+</head>
+<body>
+    {% include 'components/header.html' %}
+
+        <br>
+        <div class="cards">
+          <div class="card">
+            <a href="">
+            <img src="https://antiquariohamburgovelho.com/wp-content/uploads/2021/10/elet009.jpg" class="banner">
+              <h2>Ventilador</h2>
+            <p>Antigo.</p>
+              </a>
+          </div>
+          <div class="card">
+            <a href="">
+            <img src="https://images.tcdn.com.br/img/img_prod/608666/antigo_sofa_design_anos_60_jacaranda_26605_1_5a1975c3ff6513779cbfad67bbdd7bd7.jpg" class="banner">
+              <h2>Sofa</h2>
+            <p>Antigo.</p>
+            </a>
+          </div>
+          <div class="card">
+            <a href="">
+            <img src="https://images.tcdn.com.br/img/img_prod/608666/antiga_cama_de_casal_colonial_fazenda_madeira_nobre_24889_1_f8316ba0650b91aeff0c19bf35bab1e9.jpg" class="banner">
+              <h2>Cama</h2>
+            <p>Em perfeito estado.</p>
+            </a>
+          </div>
+          <div class="card">
+            <a href="">
+            <img src="https://static8.depositphotos.com/1361307/902/i/450/depositphotos_9023641-stock-photo-old-pc-set.jpg" class="banner">
+              <h2>Computador Antigo</h2>
+            <p>Para retirada de peças.</p>
+            </a>
+          </div>
+        </div>
+      <br>
+</body>
+</html>

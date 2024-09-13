@@ -1,0 +1,35 @@
+.alert {
+    margin-bottom: 2vh;
+    background: linear-gradient(to left, #6B0C22, #800000, #8B0000);
+    color: white;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.5s;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 990;
+  }
+
+  .alert-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Rubik", "Helvetica Neue", sans-serif;
+  }
+
+  .alert-info span {
+    margin: 2vh;
+    font-size: 2.5vh;
+  }
+
+  .close-btn {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 2vh;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 3vh;
+  }

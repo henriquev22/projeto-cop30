@@ -1,0 +1,235 @@
+
+
+.navbar {
+    background: linear-gradient(to bottom, #1867ce, #156ada, #1867ce);
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  
+  .container {
+    display: flex;
+    align-items: center;
+  }
+  
+  
+  
+  .logo {
+    font-family: "Rubik", "Helvetica Neue", sans-serif;
+    font-size: 24px;
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(to right, #464a4e, #31353a, #26292c);
+    border: none;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 10px;
+    cursor: pointer;
+    padding: 10px 15px;
+    font-weight: bold;
+  }
+  
+  .search-container {
+      display: flex;
+      align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+  
+  .search-input {
+      border: none;
+    margin: 0 5px;
+    padding: 5px 0;
+  }
+  
+  .search-input:focus {
+      outline: none; 
+  }
+  
+  .search-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5.5px 16px;
+    background: linear-gradient(to bottom, #124b97, #1356ad, #1877f2);
+    border: 3px solid #fff;
+     color: #fff;
+    border-radius: 10px;
+     cursor: pointer;
+  }
+  
+  .search-button:hover {
+    background: rgba(0, 0, 0, 0.7);
+  }
+  
+  .search-button svg {
+    width: 18px;
+    height: 18px;
+    fill: #fff;
+  }
+
+  .user-btn {
+    display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 7px;
+      margin-right: 5px;
+      background: linear-gradient(to bottom, #124b97, #1356ad, #1877f2);
+      cursor: pointer;
+      border: 2px solid #fff;
+      border-radius: 10px;
+      text-decoration: none;
+    color: #fff;
+    }
+    
+    .user-btn svg {
+      width: 22px;
+      height: 22px;
+      fill: #fff;
+    }
+    
+    .user-btn span {
+      font-family: "Rubik", "Helvetica Neue", sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      margin-left: 8px;
+    }
+    
+    .user-btn:hover {
+      background: rgba(0, 0, 0, 0.3);
+    }
+    
+  
+  .category-btn {
+    display: flex;
+    align-items: center;
+    font-family: "Rubik", "Helvetica Neue", sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+    color: #fff;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    font-weight: bold;
+    transition: background 0.2s ease-out;
+  }
+  
+  .category-btn:hover {
+    background: rgba(0, 0, 0, 0.2);
+  
+  }
+  
+  .category-btn svg {
+   width: 22px;
+    height: 22px;
+    fill: #fff;
+  }
+  
+  .entry-btns {
+  font-family: "Rubik", "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  margin-left: auto;
+  margin-right: 10px;
+  font-weight: bold;
+  }
+  
+  .sing-up {
+  background: transparent;
+  text-decoration: none;
+  padding: 4px 6px;
+  color: #fff;
+  transition: background 0.2s ease-out;
+  border-radius: 8px;
+  }
+  
+  .sing-up:hover {
+    background: rgba(0, 0, 0, 0.2);
+  
+  }
+  
+  .log-in {
+  background: transparent;
+  text-decoration: none;
+  padding: 4px 6px;
+  color: #fff;
+  transition: background 0.2s ease-out;
+  border-radius: 8px;
+  }
+  
+  .log-in:hover {
+    background: rgba(0, 0, 0, 0.2);
+  
+  }
+  
+  .menu {
+    position: relative;
+    width: 100%;
+    z-index: 998;
+    overflow: hidden;
+  }
+  
+  
+  
+  .menu-content {
+    position: fixed;
+    left: 0;
+    top: -1000px;
+    width: 100%;
+    transition: top 0.5s ease;
+    background: linear-gradient(to bottom, #1762c4, #156ada, #1e7efc);
+    padding: 20px;
+    padding-top: 90px;
+  }
+  
+  .ctn-ctg {
+    justify-content: center;
+    display:flex
+  }
+  .ctn-links {
+    margin: 0 3vh;
+    font-family: "Rubik", "Helvetica Neue", sans-serif;
+    justify-content: center;
+  }
+  
+  .ctn-links h2 {
+    color: #fff;
+    font-size: 4vh;
+  }
+  
+  .ctn-links ul {
+    list-style-type: none; 
+    padding: 0; 
+   margin: 0;
+  }
+  
+  .ctn-links ul li {
+       padding: 1vh 0; 
+  }
+  
+  .ctn-links ul li a {
+    color: white;
+    font-size: 2.7vh;
+    text-decoration: none;
+      border-bottom: 0.4vh solid transparent; 
+    transform: scaleX(0); 
+      transform-origin: center bottom; 
+      transition: border-color 0.3s ease; 
+  
+  }
+  
+  .ctn-links ul li a:hover {
+    transform: scaleX(1);
+    border-color: #ffffff;
+  }
+  
+  .menu.active .menu-content {
+    top: 0;
+    z-index: 998;
+  }
+  

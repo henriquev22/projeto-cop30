@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - CicloSolidário</title>
+    {% load static %}
+      <script src="{% static 'js/category.js' %}" defer></script>
+      <script src="{% static 'js/alert.js' %}" defer></script>
+      <link rel="stylesheet" href="{% static 'css/header.css' %}">
+      <link rel="stylesheet" href="{% static 'css/alerta.css' %}">
+      <link rel="stylesheet" href="{% static 'css/entry.css' %}">
+</head>
+<body>
+    {% include 'components/header.html' %}
+    <div class="alert" id="alert">
+      <div class="alert-info">
+        <span id="text"></span>
+        <button class="close-btn" onclick="closeAlert()">X</button>
+      </div>
+    </div>
+        <form class="conteiner" method="post">
+                {% csrf_token %}
+                <h1>Entrar</h1>
+              <label for="email">Email:</label>
+              <input type="text" id="email" name="email" required>
+             <label for="password">Senha:</label>
+             <input type="password" id="password" name="password" required>
+             <span>Não tem uma conta? <a href="/signup">Cadastrar</a></span>
+            <button type="submit" class="login-btn">Entrar</button>
+         </form>
+         <script>
+          window.onload = function() {
+            {% if error_message %}
+                showAlert('{{ error_message }}');
+            {% endif %}
+        };
+      </script>
+</body>
+</html>

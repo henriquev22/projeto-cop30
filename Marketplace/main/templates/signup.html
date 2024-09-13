@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Ciclo Solidário</title>
+    {% load static %}
+    <script src="{% static 'js/category.js' %}" defer></script>
+    <script src="{% static 'js/alert.js' %}" defer></script>
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/alerta.css' %}">
+    <link rel="stylesheet" href="{% static 'css/entry.css' %}">
+</head>
+<body>
+    {% include 'components/header.html' %}
+    <div class="alert" id="alert">
+        <div class="alert-info">
+          <span id="text"></span>
+          <button class="close-btn" onclick="closeAlert()">X</button>
+        </div>
+    </div>
+    <form class="conteiner" method="post" action="{% url 'signup' %}">
+        {% csrf_token %}
+        <h1>Cadastre-se</h1>
+        <label for="username">Nome de Usuário:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="last_name">Sobrenome (opcional):</label>
+        <input type="text" id="last_name" name="last_name">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="telefone">Número de telefone:</label>
+        <input type="text" id="telefone" name="telefone" required>
+        <label for="password">Senha:</label>
+        <input type="password" id="password" name="password" required>
+        <span>Tem uma conta? <a href="/login">Entrar</a></span>
+        <button type="submit" class="login-btn">Cadastrar</button>
+    </form>
+    <script>
+        window.onload = function() {
+          {% if error_message %}
+              showAlert('{{ error_message }}');
+          {% endif %}
+        };
+    </script>
+</body>
+</html>
