@@ -18,10 +18,11 @@ from django.db.models.signals import post_save
 post_save.connect(create_user_profile, sender=User)
 
 class Item(models.Model):
-    owner = models.ForeignKey(User, on_delete=models.CASCADE)
-    name = models.CharField(max_length=255)
+    title = models.CharField(max_length=100)
     description = models.TextField()
-    image = models.ImageField(upload_to='items/', blank=True, null=True)
+    image = models.ImageField(upload_to='images/', null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.name
+        return self.title

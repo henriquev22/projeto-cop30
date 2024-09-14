@@ -84,8 +84,7 @@ def add_item(request):
             item = form.save(commit=False)
             item.owner = request.user
             item.save()
-            messages.success(request, 'Produto adicionado com sucesso!')
-            return redirect('index')  # Redireciona para a página inicial após adicionar o produto
+            return redirect('index')
     else:
         form = ItemForm()
     return render(request, 'add_item.html', {'form': form})
