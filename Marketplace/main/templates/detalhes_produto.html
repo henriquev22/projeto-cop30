@@ -4,23 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalhes do Produto - CicloSolidário</title>
-    <link rel="stylesheet" href="static/styles.css">
 </head>
 <body>
     <header>
         <h1>CicloSolidário</h1>
     </header>
     <nav>
-        <div><a href="{% url 'index' %}">Início</a> <a href="{% url 'categorias' %}">Categorias</a></div>
-        <div><a href="{% url 'login' %}">Entrar</a> <a href="#">Cadastrar</a></div>
+        <div>
+            <a href="{% url 'index' %}">Início</a>
+            <a href="#">Categorias</a>
+        </div>
+        <div>
+            <a href="{% url 'login' %}">Entrar</a>
+            <a href="#">Cadastrar</a>
+        </div>
     </nav>
     <div class="container">
-        <div class="product-detail">
-            <img src="{{ product.image_url }}" alt="{{ product.name }}">
-            <h2>{{ product.name }}</h2>
-            <p>{{ product.description }}</p>
-            <p><strong>Estado:</strong> {{ product.condition }}</p>
+        <div class="item-detail">
+            <img src="{{ item.image.url }}" alt="{{ item.title }}">
+            <h2>{{ item.title }}</h2>
+            <p>{{ item.description }}</p>
+            <p><strong>Estado:</strong> {{ item.condition }}</p>
         </div>
     </div>
 </body>
 </html>
+

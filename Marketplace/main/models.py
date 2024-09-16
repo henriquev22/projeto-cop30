@@ -18,9 +18,16 @@ from django.db.models.signals import post_save
 post_save.connect(create_user_profile, sender=User)
 
 class Item(models.Model):
+    CONDITION_CHOICES = [
+        ('Novo', 'Novo'),
+        ('Usado', 'Usado'),
+        ('Reciclavel', 'Reciclavel'),
+    ]
+
     title = models.CharField(max_length=100)
     description = models.TextField()
     image = models.ImageField(upload_to='images/', null=True, blank=True)
+    condition = models.CharField(max_length=12, choices=CONDITION_CHOICES, default='new')
     created_at = models.DateTimeField(auto_now_add=True)
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
 

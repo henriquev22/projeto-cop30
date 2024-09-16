@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.db import IntegrityError
 from django.contrib.auth import authenticate, login as auth_login
 from django.contrib.auth import logout as auth_logout
@@ -13,14 +13,9 @@ def index(request):
     return render(request, 'index.html', {'items': items})
 
 def detalhes_produto(request, product_id):
-    # Dados fictícios para o produto
-    product = {
-        'image_url': 'https://antiquariohamburgovelho.com/wp-content/uploads/2021/10/elet009.jpg',
-        'name': 'Ventilador',
-        'description': 'Ventilador antigo, em bom estado.',
-        'condition': 'Antigo'
-    }
-    return render(request, 'detalhes_produto.html', {'product': product})
+
+    item = get_object_or_404(Item, id=product_id)
+    return render(request, 'detalhes_produto.html', {'item': item})
 
 def login(request):
     if request.method == 'POST':
